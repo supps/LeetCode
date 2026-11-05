@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace LeetCodePractice.Questions
+{
+    /*
+        Given two integer arrays arr1 and arr2, and the integer d, return the distance value between the two arrays.
+
+        The distance value is defined as the number of elements arr1[i] 
+        such that there is not any element arr2[j] where |arr1[i]-arr2[j]| <= d.
+
+        My notes:
+        What they are asking for: Only count an element in arr1 if all elements in arr2 are far enough away
+
+        Example 1:
+
+        Input: arr1 = [4,5,8], arr2 = [10,9,1,8], d = 2
+        Output: 2
+        Explanation: 
+        For arr1[0]=4 we have: 
+        |4-10|=6 > d=2 
+        |4-9|=5 > d=2 
+        |4-1|=3 > d=2 
+        |4-8|=4 > d=2 
+        For arr1[1]=5 we have: 
+        |5-10|=5 > d=2 
+        |5-9|=4 > d=2 
+        |5-1|=4 > d=2 
+        |5-8|=3 > d=2
+        For arr1[2]=8 we have:
+        |8-10|=2 <= d=2
+        |8-9|=1 <= d=2
+        |8-1|=7 > d=2
+        |8-8|=0 <= d=2
+        Example 2:
+
+        Input: arr1 = [1,4,2,3], arr2 = [-4,-3,6,10,20,30], d = 3
+        Output: 2
+        Example 3:
+
+        Input: arr1 = [2,1,100,3], arr2 = [-5,-2,10,-3,7], d = 6
+        Output: 1
+ 
+
+        Constraints:
+
+        1 <= arr1.length, arr2.length <= 500
+        -1000 <= arr1[i], arr2[j] <= 1000
+        0 <= d <= 100
+    */
+    public class _1385 : IQuestionSolving
+    {
+        public void Solve()
+        {
+            var arr1 = new int[] { 1, 4, 2, 3 };
+            var arr2 = new int[] { -4, -3, 6, 10, 20, 30 };
+            var d = 3;
+            var result = FindTheDistanceValue(arr1, arr2, d);
+            Console.WriteLine(result);
+        }
+        public int FindTheDistanceValue(int[] arr1, int[] arr2, int d)
+        {
+            int count = 0;
+            for (int x = 0; x < arr1.Length; x++)
+            {
+                bool ok = false;
+                for (int y = 0; y < arr2.Length; y++)
+                {
+                    ok = (Math.Abs(arr1[x] - arr2[y]) > d);
+                    if (!ok) break;
+                }
+                if (ok) count++;
+            }
+            return count;
+        }
+    }
+}
