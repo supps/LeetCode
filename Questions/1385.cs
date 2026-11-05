@@ -5,6 +5,9 @@ using System.Text;
 namespace LeetCodePractice.Questions
 {
     /*
+     * 1385. Find the Distance Value Between Two Arrays
+     * https://leetcode.com/problems/find-the-distance-value-between-two-arrays/description/
+     * 
         Given two integer arrays arr1 and arr2, and the integer d, return the distance value between the two arrays.
 
         The distance value is defined as the number of elements arr1[i] 

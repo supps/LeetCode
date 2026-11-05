@@ -5,7 +5,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        IQuestionSolving question = new _3736();
+        IQuestionSolving question = new _17();
         question.Solve();
         Console.ReadKey();
     }

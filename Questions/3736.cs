@@ -5,6 +5,9 @@ using System.Text;
 namespace LeetCodePractice.Questions
 {
     /*
+     * 3736. Minimum Moves to Equal Array Elements III
+     * https://leetcode.com/problems/minimum-moves-to-equal-array-elements-iii/description/
+     * 
         You are given an integer array nums.
 
         In one move, you may increase the value of any single element nums[i] by 1.
